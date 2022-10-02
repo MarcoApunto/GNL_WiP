@@ -6,13 +6,12 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/09/29 17:51:26 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/02 12:57:21 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <get_next_line.h>
 
-char	*get_next_line(int fd);
 
-if (fichero < 0 || > 256)
-	return ;
+
+char	*get_next_line(int fd);
