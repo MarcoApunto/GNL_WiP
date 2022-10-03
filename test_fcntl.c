@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_fcntl.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/03 23:13:43 by marferre          #+#    #+#             */
+/*   Updated: 2022/10/03 23:14:04 by marferre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include <fcntl.h>
-# include <unistd.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 
 int main()

@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/02 12:57:21 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/03 23:03:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
-
-
+#include "get_next_line.h"
 
 char	*get_next_line(int fd);

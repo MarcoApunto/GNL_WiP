@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:21:17 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/02 13:03:31 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/03 23:35:17 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+/*Main functions*/
 char	*get_next_line(int fd);
+
+/*Utils*/
+size_t	ft_strlen(char const *str);
+char	*ft_strchr(char const *str, int c);
 
 #endif
