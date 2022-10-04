@@ -6,14 +6,17 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:21:17 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/03 23:35:17 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/04 09:34:38 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 # include <unistd.h>
 # include <stdlib.h>
 
