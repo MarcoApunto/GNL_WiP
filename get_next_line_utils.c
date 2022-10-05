@@ -45,6 +45,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dst);
 }
 
+/*Copia de línea del file*/
+char	*ft_strdup(char const *src)
+{
+	int		i;
+	int		len;
+	char	*dst;
+
+	len = ft_strlen(src);
+	dst = malloc (sizeof(char) * (len + 1));
+	if (!dst)
+		return (0);
+	i = -1;
+	while (src[++i])
+		dst[i] = src[i];
+	dst[i] = '\0';
+	return (dst);
+}
+
 /*Lo usaré para encontrar el '\n'*/
 char	*ft_strchr(char const *str, int c)
 {

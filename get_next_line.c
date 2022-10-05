@@ -6,19 +6,44 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/04 10:17:11 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:37:14 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
-static char()
+static char	*ft_save_file(char const *gl, int fd)
+{
+	int		file;
+	char	*ln_f;
+	
+	ln_f = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!ln_f)
+		return (0);
+	if ((!(ft_strchr(gl, '\n'))))
+	{
+		file = read(fd, ln_f, BUFFER_SIZE);
+		if (file <= 0)
+		{
+			free(ln_f);
+			return (0);
+		}
+		else if (file)
+			gl = ft_strjoin(gl, ln_f);
+		else
+			gl = ft_strdup(gl);
+	}
+	return (ln_f);
+}
 
 char	*get_next_line(int fd)
 {
-	static char	*fd;
-	char		*ln;
+	static char	*ln;
+	char		*gl;
 
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (0);
+	ln = ft_save_file(gl, fd);
+	return (ln);
 }
