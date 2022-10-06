@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:21:17 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/05 15:49:13 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:39:28 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1
 # endif
 
 # include <unistd.h>

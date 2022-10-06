@@ -6,12 +6,11 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/05 17:37:14 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:40:06 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 static char	*ft_save_file(char const *gl, int fd)
 {
@@ -29,10 +28,6 @@ static char	*ft_save_file(char const *gl, int fd)
 			free(ln_f);
 			return (0);
 		}
-		else if (file)
-			gl = ft_strjoin(gl, ln_f);
-		else
-			gl = ft_strdup(gl);
 	}
 	return (ln_f);
 }

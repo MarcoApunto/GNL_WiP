@@ -18,7 +18,7 @@ int main(){
 		printf("%s", a);
 		a = get_next_line(fd);
 	}
-
-	//atexit(leaks);
+	free(a);
+	atexit(leaks);
 	return 0;
 }
