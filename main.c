@@ -10,15 +10,17 @@ void leaks()
 }
 
 int main(){
-	int fd = open("file.txt", O_RDONLY);
+	int fd = open("/Users/marferre/Desktop/42_Cursus/GNL/file.txt", O_RDONLY);
 
 	char * a = get_next_line(fd);
+	//fflush(0);
+	
 	while(a != NULL)
 	{
 		printf("%s", a);
 		a = get_next_line(fd);
 	}
 	free(a);
-	atexit(leaks);
+	//atexit(leaks);
 	return 0;
 }
