@@ -34,13 +34,20 @@ char	*ft_strjoin(char *s1, char const *s2)
 	if (!dst)
 		return (0);
 	i = 0;
-	while (i++ < ft_strlen(s1))
-		dst[i] = s1[i];
 	j = 0;
-	while (j++ < ft_strlen(s2))
-		dst[i++] = s2[j];
+	while (i < ft_strlen(s1))
+	{
+		dst[i] = s1[i];
+		i++;
+	}
+	while (j < ft_strlen(s2))
+	{
+		dst[i] = s2[j];
+		i++;
+		j++;
+	}
 	dst[i] = '\0';
-	free((void *)s1);
+	free(s1);
 	return (dst);
 }
 

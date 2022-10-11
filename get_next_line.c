@@ -6,12 +6,38 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 16:04:07 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:49:00 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
+
+char	*ft_free(char *gl)
+{
+	char	*str;
+	int		i;
+	int		j;
+
+	i = 0;
+	while (gl[i] && gl[i] != '\n')
+		i++;
+	if (!gl[i])
+	{
+		free(gl);
+		return (NULL);
+	}
+	str = malloc(sizeof(char) * (ft_strlen(gl) - i + 1));
+	if (!str)
+		return (NULL);
+	i++;
+	j = 0;
+	while (gl[i])
+		str[j++] = gl[i++];
+	str[j] = '\0';
+	free(gl);
+	return (str);
+}
 
 static char	*ft_line(char *gl)
 {
@@ -52,7 +78,7 @@ static char	*ft_save_file(char *gl, int fd)
 	if (!fl_sv)
 		return (NULL);
 	file = 1;
-	while (file != 0)
+	while (!ft_strchr(gl, '\n') && file != 0)
 	{
 		file = read(fd, fl_sv, BUFFER_SIZE);
 		if (file == -1)
@@ -61,12 +87,11 @@ static char	*ft_save_file(char *gl, int fd)
 			return (NULL);
 		}
 		fl_sv[file] = '\0';
-		gl = ft_strjoin(gl, fl_sv);
-		printf("%s", gl);
-		if (ft_strchr(gl, '\n'))
-			break ;
+		if (!gl)
+			gl = ft_strdup(fl_sv);
+		else
+			gl = ft_strjoin(gl, fl_sv);
 	}
-	
 	free(fl_sv);
 	return (gl);
 }
@@ -76,12 +101,12 @@ char	*get_next_line(int fd)
 	static char	*gl;
 	char		*ln;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
+	if (fd < 0 || read(fd, 0, 0) < 0 || BUFFER_SIZE < 0)
+		return (NULL);
 	gl = ft_save_file(gl, fd);
 	if (!gl)
 		return (NULL);
-	printf("%s", gl);
 	ln = ft_line(gl);
+	gl = ft_free(gl);
 	return (ln);
 }
