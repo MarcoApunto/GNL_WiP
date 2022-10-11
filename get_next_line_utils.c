@@ -12,7 +12,6 @@
 
 #include "get_next_line.h"
 
-/*Lo usaré para medir buffer && para strchr*/
 int	ft_strlen(char const *str)
 {
 	int	i;
@@ -23,11 +22,10 @@ int	ft_strlen(char const *str)
 	return (i);
 }
 
-/*Concatenar lo guardado*/
 char	*ft_strjoin(char *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*dst;
 
 	if (!s1 || !s2)
@@ -46,7 +44,6 @@ char	*ft_strjoin(char *s1, char const *s2)
 	return (dst);
 }
 
-/*Copia de línea del file*/
 char	*ft_strdup(char const *src)
 {
 	int		i;
@@ -64,7 +61,6 @@ char	*ft_strdup(char const *src)
 	return (dst);
 }
 
-/*Lo usaré para encontrar el '\n'*/
 char	*ft_strchr(char const *str, int c)
 {
 	int	i;
@@ -76,5 +72,5 @@ char	*ft_strchr(char const *str, int c)
 			return ((char *)str + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
