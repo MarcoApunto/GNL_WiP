@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:38:14 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 17:53:50 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:16:55 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ static char	*ft_line(char *gl)
 	int		i;
 	char	*str;
 
-	if (!gl)
-		return (NULL);
 	i = 0;
+	if (!gl[i])
+		return (NULL);
 	while (gl[i] && gl[i] != '\n')
 		i++;
 	str = malloc(sizeof(char) * (i + 2));
