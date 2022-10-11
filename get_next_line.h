@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:21:17 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 17:37:44 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:54:24 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*get_next_line(int fd);
 
 /*Utils*/
 int		ft_strlen(char const *str);
-char	*ft_strdup(char const *src);
 char	*ft_strchr(char const *str, int c);
 char	*ft_strjoin(char *s1, char const *s2);
 

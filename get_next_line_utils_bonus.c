@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:39:03 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 17:39:12 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:54:02 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,6 @@ char	*ft_strjoin(char *s1, char const *s2)
 	}
 	dst[i] = '\0';
 	free(s1);
-	return (dst);
-}
-
-char	*ft_strdup(char const *src)
-{
-	int		i;
-	int		len;
-	char	*dst;
-
-	len = ft_strlen(src);
-	dst = malloc (sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	i = -1;
-	while (src[++i])
-		dst[i] = src[i];
-	dst[i] = '\0';
 	return (dst);
 }
 

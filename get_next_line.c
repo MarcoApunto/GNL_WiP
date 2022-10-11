@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 17:40:08 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:52:42 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,7 @@ static char	*ft_save_file(char *gl, int fd)
 			return (NULL);
 		}
 		fl_sv[file] = '\0';
-		if (!gl)
-			gl = ft_strdup(fl_sv);
-		else
-			gl = ft_strjoin(gl, fl_sv);
+		gl = ft_strjoin(gl, fl_sv);
 	}
 	free(fl_sv);
 	return (gl);
