@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 17:19:52 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 17:40:08 by marferre         ###   ########.fr       */
+/*   Created: 2022/10/11 17:38:14 by marferre          #+#    #+#             */
+/*   Updated: 2022/10/11 17:45:14 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*ft_control_leaks(char *gl)
 {
@@ -97,15 +97,15 @@ static char	*ft_save_file(char *gl, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*gl;
+	static char	*gl[OPEN_MAX];
 	char		*ln;
 
 	if (fd < 0 || read(fd, 0, 0) < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	gl = ft_save_file(gl, fd);
-	if (!gl)
+	gl[fd] = ft_save_file(gl[fd], fd);
+	if (!gl[fd])
 		return (NULL);
-	ln = ft_line(gl);
-	gl = ft_control_leaks(gl);
+	ln = ft_line(gl[fd]);
+	gl[fd] = ft_control_leaks(gl[fd]);
 	return (ln);
 }
