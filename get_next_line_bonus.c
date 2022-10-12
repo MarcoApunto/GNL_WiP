@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:38:14 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 21:16:55 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:08:15 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*ft_control_leaks(char *gl)
 		free(gl);
 		return (NULL);
 	}
-	str = malloc(sizeof(char) * (ft_strlen(gl) - i + 1));
+	str = malloc(sizeof(char) * ((ft_strlen(gl) - i) + 1));
 	if (!str)
 		return (NULL);
 	i++;
@@ -59,7 +59,7 @@ static char	*ft_line(char *gl)
 	}
 	if (gl[i] == '\n')
 	{
-		str[i] = gl[i];
+		str[i] = '\n';
 		i++;
 	}
 	str[i] = '\0';
@@ -71,8 +71,6 @@ static char	*ft_save_file(char *gl, int fd)
 	int		file;
 	char	*fl_sv;
 
-	if (!gl)
-		gl = malloc(sizeof(char));
 	fl_sv = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!fl_sv)
 		return (NULL);
@@ -98,7 +96,11 @@ char	*get_next_line(int fd)
 	char		*ln;
 
 	if (fd < 0 || read(fd, 0, 0) < 0 || BUFFER_SIZE <= 0)
+	{
+		free(gl[fd]);
+		gl[fd] = NULL;
 		return (NULL);
+	}
 	gl[fd] = ft_save_file(gl[fd], fd);
 	if (!gl[fd])
 		return (NULL);

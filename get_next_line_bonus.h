@@ -6,7 +6,7 @@
 /*   By: marferre <marferre@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:40:49 by marferre          #+#    #+#             */
-/*   Updated: 2022/10/11 21:51:09 by marferre         ###   ########.fr       */
+/*   Updated: 2022/10/12 10:58:45 by marferre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@
 # include <stdlib.h>
 # include <limits.h>
 
-/*Main function*/
 char	*get_next_line(int fd);
 
-/*Utils*/
 int		ft_strlen(char const *str);
 char	*ft_strchr(char const *str, int c);
 char	*ft_strjoin(char *s1, char *s2);
